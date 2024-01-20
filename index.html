@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="./css/style.css" />
+	</head>
+	<body>
+		<div>
+			<div>
+				<div>
+					<header>
+						<div class="header_block">
+							<h1 class="header_title">Getting Down with CSS</h1>
+							<nav class="navigation">
+								<a href="./lesson1.html">Lesson 1</a>
+								<a href="./lesson2.html">Lesson 2</a>
+								<a href="./index.html">Lesson 3</a>
+								<a href="./lesson4.html">Lesson 4</a>
+								<a href="./lesson5.html">Lesson 5</a>
+								<a href="./lesson6.html">Lesson 6</a>
+								<a href="./lesson7.html">Lesson 7</a>
+								<a href="./lesson8.html">Lesson 8</a>
+								<a href="./lesson9.html">Lesson 9</a>
+							</nav>
+							<div class="subheader">
+								<p>by Jeffrey Elkner, Niranjan Adhikari and Jay Byron</p>
+								<center>
+									<h1 id="title" style="color: rgba(0, 0, 255, 0.577)">
+										Lesson 3: Basic Selectors
+									</h1>
+								</center>
+							</div>
+							<section id="lesson">
+								<p>
+									The basic selectors all select elements based on their element
+									type, element attributes, or a combination of both
+									<i>without reference to other elements.</i>
+								</p>
+								<h2>Element Selectors</h2>
+								<p>
+									Element selectors apply to a particular element type, like
+									<code>h1</code>
+									<code>p</code>
+									<code>b</code>
+									<code>li</code>
+								</p>
+								<pre class="source" style="width: 400px">
+                                h1 {
+                                    text-align: center;
+                                }
+                                p {
+                                    text-align: justify;
+                                }
+                                b {
+                                    color: #F00;
+                                }   
+                            </pre
+								>
+								<p>
+									The style sheet above centers all top level headings,
+									justifies paragraphs, and makes bold text red.
+								</p>
+								<h2>Class Selectors</h2>
+								<p>
+									When you want more specific control over which elements in
+									your document receive a style, you can use class selectors.
+									Class selectors require a class="[class_name]"<code
+										>class="[class_name]"</code
+									>
+									attribute (review
+									<a href="./lesson1.html">Lesson 1</a>
+									from
+									<a href="./lesson2.html">Getting Down with HTML</a>
+									if you don't know what an
+									<i>attribute</i>
+									is) inside the element to which they will apply:
+								</p>
+								<pre class="source" style="width: 800px">
+                                &lt;p class="standout"&lt;
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                    culpa qui officia deserunt mollit anim id est laborum.
+                                    &lt;p&lt;
+                            </pre
+								>
+								<p>
+									You then create a style selector with a dot (
+									<code>.</code>
+									) followed by the class name to apply the style to elements
+									with that class.
+								</p>
+								<pre class="source" style="width: 800px">
+                                .standout {
+                                    padding: 20px;
+                                    margin: 20px;
+                                    border: 1px dotted #777;
+                                    font-style: italic;
+                                    color: #191970;
+                                }
+                            </pre
+								>
+								<p>Putting these together you can create this</p>
+								<p class="standout">
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
+									do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+									Ut enim ad minim veniam, quis nostrud exercitation ullamco
+									laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+									irure dolor in reprehenderit in voluptate velit esse cillum
+									dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+									cupidatat non proident, sunt in culpa qui officia deserunt
+									mollit anim id est laborum.
+								</p>
+								<p>
+									Applying this same class style to an
+									<code>H1</code>
+									element gives this
+								</p>
+								<h2 class="standout">A Standout Heading</h2>
+								<p>
+									In this example a single
+									<code>.standout</code>
+									class selector is used to style all elements with the
+									<code>class</code>
+									attribute set to
+									<code>"standout"</code>
+									.
+								</p>
+								<p>
+									Class and element selector can be combined. The
+									<code>p.standout</code>
+									selector only selects
+									<code>&lt;p&lt;&lt;p&lt;</code>
+									elements with class attribute
+									<code>standout</code>
+									. Likewise,
+									<code>h1.standout</code>
+									will only apply to standout top level headings, so
+								</p>
+								<pre class="source" width="800px">
+h1.standout {
+                                text-align: center;
+                            }</pre
+								>
+								<p>
+									will center your standout
+									<code>h1</code>
+									s.
+								</p>
+								<h2>ID Selectors</h2>
+								<p>
+									ID selectors use the
+									<code>id="[id_name]"</code>
+									attribute in the styled element together with a
+									<code>#[id_name]</code>
+									selector in the style sheet. As you will learn in
+									<a href="./lesson8.html">lesson 8</a>
+									, if both a class style and an id style are applied to the
+									same element, the id style wins.
+								</p>
+								<p>This id selector</p>
+								<pre class="source" style="width: 800px">
+                                #first {
+                                    color: #070;
+                                }
+                            </pre
+								>
+								<p>
+									Would make a paragraph starting with the tag
+									<code>&lt;p id="first"&lt;</code>
+									have dark green color text.
+								</p>
+								<h2>Group Selectors</h2>
+								<p>
+									Group selectors use a comma seperated list (or group) of other
+									selector types to apply a style to the whole group of
+									elements.
+								</p>
+								<p>This group selector</p>
+								<pre class="source" style="width: 800px">
+                                h1, h2, h3, footer {
+                                    text-align: center;
+                                }
+                            </pre
+								>
+								<p>
+									Would center the first three heading elements and the footer
+									element.
+								</p>
+								<h2 id="link_pseudo_classes">
+									Pseudo-class Selectors for Hyperlink Elements
+								</h2>
+								<p>
+									Hyperlink elements have special
+									<i>pseudo-classes</i>
+									that are used to style them before they are
+									<q>"visited"</q>
+									(clicked), after they are visited, when a mouse is hovering
+									over them, and while they are being clicked. The following
+									example shows how these are used.
+								</p>
+								<pre class="source" style="width: 800px">
+                                a:link {
+                                    color: #080;
+                                }
+                                a:visited {
+                                    color: #880;
+                                    text-decoration: none;
+                                }
+                                a:hover {
+                                    color: #0F0;
+                                }
+                                a:active {
+                                    font-size: xx-large;
+                                }
+                            </pre
+								>
+								<p id="pseudo-class-exemple">
+									<a href="./lesson5.html">This</a>
+									page shows the hyperlink psuedo-classes at work. Hover your
+									mouse over a link and watch it change color. Click on it (and
+									don't let go) and watch the font-size change to
+									<code>xx-large</code>
+									.
+								</p>
+							</section>
+							<section id="exercises">
+								<h2>Exercises</h2>
+								<ol>
+									<li>
+										1. "Start with the"
+										<code>block.html</code>
+										"page you made in"
+										<a href="./index.html">lesson 3</a>
+										"of"
+										<a href="./lesson7.html">Getting Down with HTML</a>
+										". If you don't have your own, you can use"
+										<a href="./lesson8.html" download="block.html">This</a>
+										"one. Using this file, make the following changes to the
+										document:"
+									</li>
+									<li>
+										"As you did in the exercises last lesson, add the"
+										<code>&lt;style&lt;&lt;style&lt;</code>
+										"element to document"
+										<code>head</code>
+										" and the "
+										<code>footer</code>
+										" element with doth HTML 5 and CSS 3 validation links at the
+										end of the "
+										<code>body</code>
+										.
+									</li>
+									<li>
+										Now add the following styles, one at a time, reloading the
+										document each time to see the effect it had:
+										<ol>
+											<li list-style-type: lower-roman;>
+												1
+												<pre>
+                                                body {
+                                                    margin: 40px;
+                                                    padding: 40px;
+                                                    background-color: #BE5;
+                                                    border: 2px dashed #573;
+                                                }  
+                                                
+                                            </pre
+												>
+											</li>
+											<li list-style-type: lower-roman;>
+												2
+												<pre>
+                                                h1, footer {
+                                                    text-align: center;
+                                                }  
+                                            </pre
+												>
+											</li>
+											<li list-style-type: lower-roman;>
+												3
+												<pre>
+                                                p, pre {
+                                                    margin-left: 15px;
+                                                }  
+                                                
+                                            </pre
+												>
+											</li>
+											<li list-style-type: lower-roman;>
+												4
+												<pre>
+                                                .first {
+                                                    background-color: #FF9;
+                                                    border: 2px dotted #000;
+                                                }
+                                                .second {
+                                                    background-color: #CF9;
+                                                    border: 2px dotted #880;
+                                                }
+                                                #first {
+                                                    color: #373;
+                                                }
+                                                #second {
+                                                     color: #040;
+                                                }
+                                            </pre
+												>
+												Then add a
+												<code>class="first</code>
+												attribute to the
+												<code>pre</code>
+												element and a
+												<code>class="second</code>
+												attribute to the
+												<code>div</code>
+												element. Add
+												<code>id="first</code>
+												to the first
+												<code>h2</code>
+												element and
+												<code>id="second</code>
+												to the second
+												<code>h2</code>
+												element.
+											</li>
+											<li list-style-type; lower-foman;>
+												5
+												<pre>
+                                                a:link, a:visited {
+                                                    font-weight: bold;
+                                                    color: #000;
+                                                    text-decoration: none;
+                                                }
+                                                a:hover, a:active {
+                                                    color: #FF0;
+                                                }
+                                                a:active {
+                                                    font-size: xx-large;
+                                                }
+                                            </pre
+												>
+											</li>
+										</ol>
+									</li>
+									When you finish, your page should look something like
+									<a href="screenshots/lesson3/block_html.png">this</a>
+									.
+									<li>
+										Start with the
+										<code>inline.html</code>
+										page you made in
+										<a href="./index.html">lesson 3</a>
+										of
+										<a href="./lesson4.html">Getting Down with HTML</a>
+										. You can use
+										<a href="./lesson9.html">this</a>
+										if you don't have your own. As in the previons exercise, add
+										the
+										<code>footer</code>
+										and
+										<code>style</code>
+										elements. Add this line to the style element:
+										<pre>@import url(inline.css);</pre>
+										Create a new file named
+										<code>inline.css</code>
+										in the same directory as your
+										<code>inline.html</code>
+										Now make the following changes to
+										<code>inline.css</code>
+										, reloading
+										<code>inline.html</code>
+										in your browser after each change to see the effects on the
+										document:
+									</li>
+									<li style="list-style-type: lower-roman">
+										<pre>
+body {
+                                        background-color: #FFE4C4;
+                                        margin: 40px;
+                                    }</pre
+										>
+									</li>
+									<li style="list-style-type: lower-roman">
+										Add a
+										<code>section</code>
+										element to
+										<code>inline.html</code>
+										with the open section tag (
+										<code>&lt;section&lt;&lt;section&lt;</code>
+										) immediately before the first paragraph (after the
+										<code>h1</code>
+										element) and the close section tag (
+										<code>&lt;section&lt;</code>
+										) immediately after the last paragraph element before the
+										<code>footer</code>
+										element. Then add the following style to
+										<code>inline.css</code>
+										:
+										<pre>
+section {
+                                        background-color: #FFF8DC;
+                                        padding: 20px;
+                                    }</pre
+										>
+									</li>
+									<li style="list-style-type: lower-roman">
+										<pre>
+h1, footer {
+                                        text-align: center;
+                                    }
+                                    footer {
+                                        margin-top: 20px;
+                                    }
+                                    a:link, a:visited {
+                                        color: #000;
+                                        text-decoration: none;
+                                    }   
+                                    </pre
+										>
+									</li>
+									<li style="list-style-type: lower-roman">
+										<pre>
+b {
+                                        color: #800000;
+                                    }   
+                                    strong {
+                                        color: #D2691E;
+                                    }</pre
+										>
+										So while the default appearance of
+										<code>b</code>
+										and
+										<code>strong</code>
+										elements is the same, using CSS you can style them
+										differently.
+									</li>
+								</ol>
+								After you finish your document should look something like
+								<a href="./lesson6.html">this</a>
+								.
+								<li>
+									There are still a lot more elements from
+									<code>inline.html</code>
+									that haven't been styled. Apply what you have learned so far
+									to style the
+									<code>em</code>
+									,
+									<code>i</code>
+									,
+									<code>code</code>
+									,
+									<code>kbd</code>
+									,
+									<code>sup</code>
+									, and
+									<code>sub</code>
+									elements. Make quotes stand out by adding a distinctive style
+									to the
+									<code>q</code>
+									element.
+								</li>
+								<li>
+									Use class attributes and class selectors to make each
+									<code>span</code>
+									element in the last paragraph of
+									<code>inline.html</code>
+									a different color.
+								</li>
+							</section>
+							<footer>
+								<hr />
+								<p id="finished">
+									Congratulations, you have finished lesson
+									<span>3</span>
+									;
+								</p>
+								<p>
+									<a id="next" href="./lesson4.html">next lesson</a>
+									|
+									<a href="./index.html">home page</a>
+								</p>
+								<p class="button">
+									<a href="./lesson6.html">
+										<strong> HTML </strong>
+										Valid!
+									</a>
+									&nbsp;
+									<a href="./lesson7.html">
+										<strong> CSS </strong>
+										Valid!
+									</a>
+								</p>
+								<p>
+									<a href="./lesson7.html">
+										<img
+											src="http://www.ibiblio.org/hosted/images/sm_hosted_trans.gif"
+											width="100"
+											height="30"
+											alt="hosted by ibiblio" />
+									</a>
+								</p>
+							</footer>
+						</div>
+					</header>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

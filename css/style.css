@@ -1,0 +1,124 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap);
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+.container{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header_block{
+    border: 2px solid black;
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.header_title{
+    /* color: #fff; */
+    color: rgb(48, 48, 153);
+    text-decoration: none;
+    padding: 20px 0 20px 0;
+    text-align: center;
+}
+.navigation{
+    background-color: grey;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.navigation a:visited{
+    background: rgb(0, 0, 102);
+}
+
+.navigation a:hover{
+    color: yellow;
+}
+
+
+.navigation a:hover{
+    background: rgb(0, 0, 102);
+}
+.subheader{
+    background: rgb(0, 0, 102);
+    color: #aaf;
+    text-align: center;
+    padding: 5px 0 5px 0;
+}
+/* Lessons */
+section#lesson>p {
+    text-align: justify;
+}
+section#lesson>h2, section#lesson>h3 {
+   text-align: center;
+   font-size: x-large; 
+}
+section#lesson>h2 {
+    margin-top: 50px;
+}
+cite {
+    display: block;
+    margin-top: 5px;
+}
+
+/* Source Examples */
+.source {
+    color: rgba(240, 248, 255, 0.886);
+    background-color: rgb(5, 53, 141);
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 12pt;
+}
+.source a, .source a:visited {
+    color: #ccf;
+    text-decoration: none;
+}
+.source a:hover {
+    color: #ff0;
+    text-decoration: none;
+}
+
+/* Exercises */
+#exercises {
+    border-top: 1px solid #777;
+    margin-top: 40px;
+    margin-left: 25px;
+}
+#exercises h2 {
+    margin-left: -25px;
+    text-align: left;
+}
+#exercises li, #exercises ul {
+    margin-bottom: 20px;
+}
+#exercises ol ol>li {
+    list-style-type: lower-alpha;
+}
+#exercises ol ol ol>li {
+    list-style-type: lower-roman;
+}
+#exercises ul>li {
+    list-style-type: square;
+}
+#exercises ul ul>li {
+    list-style-type: circle;
+}
+
+/* Bottom section and navigation */
+footer p {
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+footer p.button {
+    margin-top: 30px;
+}
+
+
